@@ -333,6 +333,14 @@ namespace game
                 }
             }
         }
+				//g.pushlist();
+				g.textf("your stats", 0xFFFF80, "server");
+                g.textf("frags: %d", 0xFFFFDD, NULL, player1->frags);
+				g.textf("deaths: %d", 0xFFFFDD, NULL, player1->deaths);
+				if (m_ctf) {
+	                g.textf("flags captured: %d", 0xFFFFDD, NULL, player1->flags);
+				}
+				//g.poplist();
     }
 
     struct scoreboardgui : g3d_callback
