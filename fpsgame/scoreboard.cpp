@@ -334,8 +334,10 @@ namespace game
             }
         }
         g.textf("your stats", 0xFFFF80, "server");
-        g.textf("frags: %d", 0xFFFFDD, NULL, player1->frags);
+        g.textf("score: %d", 0xFFFFDD, NULL, player1->frags);
+        g.textf("kills: %d", 0xFFFFDD, NULL, player1->kills);
         g.textf("deaths: %d", 0xFFFFDD, NULL, player1->deaths);
+        g.textf("teamkills: %d", 0xFFFFDD, NULL, player1->teamkills);
         if (m_ctf) {
           g.textf("flags captured: %d", 0xFFFFDD, NULL, player1->flags);
         }
