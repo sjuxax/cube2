@@ -1,1 +1,7 @@
 *~
+*.cfg
+*.o
+*.a
+*.gch
+sauer_client
+sauer_server
