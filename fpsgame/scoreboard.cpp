@@ -343,10 +343,13 @@ namespace game
             g.textf("deaths: %d ", 0xFFFFDD, NULL, player1->deaths);
             g.textf("teamkills: %d", 0xFFFFDD, NULL, player1->teamkills);
             g.poplist();
+            g.pushlist();
             if(m_ctf)
              { 
                  g.textf("flags captured: %d", 0xFFFFDD, NULL, player1->flags);
              }
+            g.textf("k/d: %.2f", 0xFFFFDD, NULL, player1->kd_ratio);
+            g.poplist();
 //         }
     }
 

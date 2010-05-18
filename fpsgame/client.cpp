@@ -1247,7 +1247,9 @@ namespace game
                 //because the server tracks them. right now we will track them ourselves.
                 
                 if (actor==player1 && isteam(actor->team, victim->team)) {  player1->teamkills++; }
-                else if (actor==player1 && !isteam(actor->team, victim->team)) { player1->kills++; }
+                else if (actor==player1 && !isteam(actor->team, victim->team)) {
+                  player1->kills++;
+                }
                 
                 if(actor!=player1 && (!cmode || !cmode->hidefrags()))
                 {
@@ -1256,6 +1258,18 @@ namespace game
                 }
                 if(!victim) break;
                 killed(victim, actor);
+                
+                //this goes after killed so that the death count is correct when calculated.
+                if (victim == player1 || actor == player1) {
+                  if (player1->deaths > 0 && player1->kills > 0) {
+                    player1->kd_ratio = 1.0 * player1->kills / player1->deaths;
+                  } else if (player1->kills > 0 && player1->deaths == 0) {
+                    player1->kd_ratio = player1->kills;
+                  } else {
+                    player1->kd_ratio = 0;
+                  }
+                }
+                
                 break;
             }
 
