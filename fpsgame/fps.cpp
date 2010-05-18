@@ -524,6 +524,8 @@ namespace game
             fpsent *d = players[i];
             d->frags = d->flags = 0;
             d->deaths = 0;
+            d->kills = 0;
+            d->teamkills = 0;
             d->totaldamage = 0;
             d->totalshots = 0;
             d->maxhealth = 100;
